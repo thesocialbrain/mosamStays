@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "question": "What is the Check in Time?",
+    "answer": "Our standard check-in time is 3:00 PM. We offer early check-in based on availability for an additional fee. Please contact the front desk 24 hours prior to arrival."
+  },
+  {
+    "id": 2,
+    "question": "What types of rooms are available?",
+    "answer": "Harbour offers a selection of luxurious rooms and suites, each designed to provide the ultimate comfort. Choose from cliffside rooms with panoramic coastal views, spacious suites with private terraces, or secluded estate rooms for added privacy. Every room features premium furnishings and modern amenities."
+  },
+  {
+    "id": 3,
+    "question": "What is the Check Out Time",
+    "answer": "Standard check-out time is 11:00 AM. Late check-out may be arranged for an extra charge, subject to room availability."
+  },
+  {
+    "id": 4,
+    "question": "Can we get extra mattresses",
+    "answer": "Yes, extra mattresses can be provided in certain room types for an additional charge. Please request this at the time of booking to ensure availability."
+  }
+]

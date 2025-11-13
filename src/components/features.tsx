@@ -3,55 +3,32 @@
 import { useState } from "react";
 import Image from "next/image";
 
+import featuresData from "../lib/data/features.json";
+
 interface Feature {
   title: string;
   description: string;
   imageUrl: string;
 }
 
-const featuresData: Feature[] = [
-  {
-    title: "Breathtaking Views",
-    description:
-      "Experience the beauty of Harbour from every angle, with awe-inspiring vistas of lush landscapes, serene waters, and endless horizons.",
-    imageUrl: "/images/1.jpg",
-  },
-  {
-    title: "Infinity Pool",
-    description:
-      "Lose yourself in the horizon as our stunning infinity pool merges seamlessly with the azure sea. The perfect spot for ultimate relaxation.",
-    imageUrl: "/images/2.jpg",
-  },
-  {
-    title: "Championship golf course",
-    description:
-      "Tee off on our 18-hole championship course, designed by legends and set against a backdrop of dramatic coastal cliffs.",
-    imageUrl: "/images/3.jpg",
-  },
-  {
-    title: "Sensua Spa",
-    description:
-      "Indulge your senses at Sensua Spa, a sanctuary of tranquility offering bespoke treatments inspired by ancient wellness traditions.",
-    imageUrl: "/images/1.jpg",
-  },
-  {
-    title: "Michelin restaurant",
-    description:
-      "Embark on a culinary journey at our Michelin-starred restaurant, where innovative dishes meet the finest local ingredients.",
-    imageUrl: "/images/2.jpg",
-  },
-];
+const typedFeaturesData: Feature[] = featuresData as Feature[];
 
 export default function MosamFeatures() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [fade, setFade] = useState<boolean>(true);
 
   const handleFeatureClick = (index: number) => {
-    setActiveIndex(index);
+    if (index === activeIndex) return;
+    setFade(false); // fade out current image
+    setTimeout(() => {
+      setActiveIndex(index); // change image after fade-out
+      setFade(true); // fade new image in
+    }, 300); // match transition duration
   };
 
   return (
-    <section className="p-8 md:p-16 bg-[#fcfaf6] text-[#6b4f3b] font-serif">
-      <h1 className="text-4xl md:text-5xl text-center mb-12">
+    <section className="p-8 md:p-16 ">
+      <h1 className="text-3xl md:text-[56px] text-center mb-16 md:mb-24 ">
         Escape to opulence,
         <br />
         tranquility, and relaxation at
@@ -60,18 +37,21 @@ export default function MosamFeatures() {
       </h1>
 
       <div className="flex flex-col md:flex-row gap-20 max-w-6xl mx-auto">
-        {/* Left Side: Featuress list */}
+        {/* Left Side: Featurees  */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          {featuresData.map((feature, index) => (
-            <div key={feature.title} className="border-b border-[#dcd3c9] py-3">
-              <h3
-                className="text-black text-xl font-medium cursor-pointer"
-                onClick={() => handleFeatureClick(index)}
-              >
+          {typedFeaturesData.map((feature, index) => (
+            <div
+              key={feature.title}
+              className={`border-b border-[#D9D9D9] py-3 transition-all duration-300 cursor-pointer ${
+                activeIndex === index ? "text-[#000000]" : "text-[#2b2a2a]"
+              }`}
+              onClick={() => handleFeatureClick(index)}
+            >
+              <h3 className="text-[25px] text-[#000000] font-medium">
                 {feature.title}
               </h3>
               {activeIndex === index && (
-                <p className="mt-3 text-base text-[#7d7b78] font-sans">
+                <p className="mt-2 text-[#646363] text-[16px] text-base font-sans">
                   {feature.description}
                 </p>
               )}
@@ -79,16 +59,18 @@ export default function MosamFeatures() {
           ))}
         </div>
 
-        {/* Right Side: Image */}
-        <div className="w-full md:w-1/2 md:flex items-center justify-center hidden ">
+        {/* Right Side: Images */}
+        <div className="w-full md:w-2/3 lg:w-1/2 md:flex items-center justify-center hidden">
           <div className="relative w-3/4 aspect-square overflow-hidden rounded-[50px]">
             <Image
-              src={featuresData[activeIndex].imageUrl}
-              alt={featuresData[activeIndex].title}
-              style={{ objectFit: "cover" }}
-              className="transition-all duration-400 ease-in"
+              key={typedFeaturesData[activeIndex].imageUrl}
+              src={typedFeaturesData[activeIndex].imageUrl}
+              alt={typedFeaturesData[activeIndex].title}
               fill
-              key={featuresData[activeIndex].imageUrl}
+              style={{ objectFit: "cover" }}
+              className={`transition-opacity duration-500 ease-in-out ${
+                fade ? "opacity-100" : "opacity-0"
+              }`}
             />
           </div>
         </div>
