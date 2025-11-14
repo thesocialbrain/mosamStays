@@ -42,7 +42,7 @@ export default function MosamFeatures() {
           {typedFeaturesData.map((feature, index) => (
             <div
               key={feature.title}
-              className={`border-b border-[#D9D9D9] py-3 transition-all duration-300 cursor-pointer ${
+              className={`border-b border-[#D9D9D9] py-3 transition-opacity duration-500 ease-in cursor-pointer ${
                 activeIndex === index ? "text-[#000000]" : "text-[#2b2a2a]"
               }`}
               onClick={() => handleFeatureClick(index)}
