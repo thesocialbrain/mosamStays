@@ -28,7 +28,7 @@ export default function MosamFeatures() {
 
   return (
     <section className="p-8 md:p-16 ">
-      <h1 className="text-3xl md:text-[56px] text-center mb-16 md:mb-24 ">
+      <h1 className="text-2xl md:text-[56px] text-center mb-16 md:mb-24 ">
         Escape to opulence,
         <br />
         tranquility, and relaxation at
@@ -42,7 +42,7 @@ export default function MosamFeatures() {
           {typedFeaturesData.map((feature, index) => (
             <div
               key={feature.title}
-              className={`border-b border-[#D9D9D9] py-3 transition-all duration-300 cursor-pointer ${
+              className={`border-b border-[#D9D9D9] py-3 transition-opacity duration-500 ease-in cursor-pointer ${
                 activeIndex === index ? "text-[#000000]" : "text-[#2b2a2a]"
               }`}
               onClick={() => handleFeatureClick(index)}
@@ -54,6 +54,21 @@ export default function MosamFeatures() {
                 <p className="mt-2 text-[#646363] text-[16px] text-base font-sans">
                   {feature.description}
                 </p>
+              )}
+              {activeIndex === index && (
+                <div className="md:hidden w-full mt-6">
+                  <div className="relative w-full aspect-video overflow-hidden rounded-3xl mb-4">
+                    <Image
+                      key={typedFeaturesData[activeIndex].imageUrl}
+                      src={typedFeaturesData[activeIndex].imageUrl}
+                      alt={typedFeaturesData[activeIndex].title}
+                      fill
+                      className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out  ${
+                        fade ? "opacity-200" : "opacity-0"
+                      }`}
+                    />
+                  </div>
+                </div>
               )}
             </div>
           ))}

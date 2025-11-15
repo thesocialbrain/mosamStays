@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { ChevronDown } from "lucide-react";
-import Image from "next/image";
+import { ChevronDown, Instagram, Mail, MapPin, Phone } from "lucide-react";
+
 import Link from "next/link";
 
-const DARK_NAVY = "#090A25";
+// const DARK_NAVY = "#090A25";
 
 const ContactUsForm: React.FC = () => {
   return (
@@ -21,19 +21,65 @@ const ContactUsForm: React.FC = () => {
         {/* Contact Form  */}
 
         <div className="max-w-4xl mx-4 sm:mx-14 md:mx-auto px-2 relative z-20 ">
-          <div className="flex  border-2 border-gray-200 rounded-2xl overflow-hidden bg-white">
-            <div className="hidden md:block w-1/2 p-2">
-              <Image
-                src="/contact.webp"
-                alt="Estate placeholder"
-                className="w-full h-full object-fit rounded-lg"
-                width={700}
-                height={400}
-              />
+          <div className="flex flex-col md:flex-row border-2 border-gray-200 rounded-2xl overflow-hidden bg-[white]">
+            <div className="w-full md:w-1/2 border md:border-r-2 border-gray-300 rounded-xl bg-[#090A25] ">
+              <div className="text-white p-8 max-w-lg w-full">
+                <div className="mb-24">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-gray-100">
+                    Hey There!
+                  </h3>
+                  <p className="text-gray-200 mb-8 leading-relaxed text-md font-sans">
+                    Want to book villa at an affordable rate? Call us now or
+                    fill the form and we will get back to you as soon as
+                    possible!
+                  </p>
+
+                  <div className="space-y-4 font-sans">
+                    <a
+                      href="tel:+919850342555"
+                      className="flex items-center gap-3 group text-md text-gray-200 hover:text-white "
+                    >
+                      <Phone className="w-5 h-5 " />
+                      +91 98503 42555
+                    </a>
+
+                    <a
+                      href="mailto:abc@gmail.com"
+                      className="flex items-center gap-3 group text-md text-gray-200 hover:text-white "
+                    >
+                      <Mail className="w-5 h-5 " />
+                      abc@gmail.com
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/ToyWfmV3eUvHDM7s6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-3 group text-md hover:text-white "
+                    >
+                      <MapPin className="w-5 h-5 text-gray-300 transition-colors shrink-0 mt-1" />
+                      <span className="">
+                        Mosam Farmstay, Ghoti-Sinner Road, Igatpuri-422502
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <a
+                  href="https://www.instagram.com/mosamfarmstay"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 mt-40"
+                >
+                  <Instagram className="w-6 h-6 text-gray-200 group-hover:text-white transition-colors" />
+                  <span className="text-[16px] font-sans">
+                    Follow on Instagram
+                  </span>
+                </a>
+              </div>
             </div>
 
             {/* Form */}
-            <div className="w-full md:w-1/2 p-4 sm:p-6 ">
+            <div className="w-full md:w-1/2 p-4 sm:p-6 pt-10">
               <form className="space-y-3 font-sans">
                 <div>
                   <label
@@ -136,7 +182,7 @@ const ContactUsForm: React.FC = () => {
                   <button
                     type="submit"
                     className="w-full bg-stone-800 text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-stone-700 transition duration-300 shadow-lg"
-                    style={{ backgroundColor: DARK_NAVY }}
+                    style={{ backgroundColor: "#090A25" }}
                   >
                     Make an Enquiry
                   </button>
@@ -150,7 +196,7 @@ const ContactUsForm: React.FC = () => {
       {/* Footer */}
       <footer
         className="pb-8 px-8 sm:px-16 text-white text-center relative z-10 w-full mt-[-600px] md:mt-[-450px]"
-        style={{ backgroundColor: DARK_NAVY }}
+        style={{ backgroundColor: "#090A25" }}
       >
         <div className="pt-[560px] md:pt-[400px] lg:pt-[420px]">
           <div className="text-center mb-34">
