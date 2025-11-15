@@ -21,7 +21,7 @@ const Quote = () => {
                         and admiring the breathtaking spectacle of the cliffs. A tranquil getaway and 
                         the variety of pursuits is vast.”
                     </p>
-                    <p className='text-[#8B542C] flex items-start justify-start'>-Sarah Colloins</p>
+                    <p className='text-[#8B542C] flex items-start justify-start'> -Sarah Colloins</p>
                 </div>
             </div>
         </div>
