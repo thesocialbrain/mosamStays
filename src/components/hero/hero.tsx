@@ -23,7 +23,6 @@ const Hero: React.FC = () => {
                 <p className='w-[400px]'>Experience the grandeur of Harbour, a quintessential five-star resort nestled within 100 lush green acres, housing a world-class spa, award-winning Michelin eatery, and a premier golf course.</p>
                 <button className='text-white bg-gray-900 px-4 py-2 rounded-l-full rounded-r-full cursor-pointer'>Book a night</button>
             </div>
-
         </div>
     );
 };
