@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 // import { Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../app/globals.css";
 import { lustria } from "@/fonts/lustria";
 import Navbar from "@/components/common/navbar";
+
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
