@@ -8,29 +8,77 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [fade, setFade] = useState(false);
 
-  const handleLinkClick = (href: string) => {
-    // Start fade animation
-    setFade(true);
+  const smoothScrollTo = (href: string) => {
+    if (href === "#" || href === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const targetId = href.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
-    // After fade animation, close menu + navigate
+  // Handler: Mobile (Waits for fade animation)
+  const handleMobileClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setFade(true); // Start fade out
+
     setTimeout(() => {
-      setOpen(false);
-      setFade(false);
-      window.location.href = href; // smooth scroll
-    }, 350); // matches fade duration
+      setOpen(false); // Close menu
+      setFade(false); // Reset fade state
+      smoothScrollTo(href); // Scroll
+    }, 350);
+  };
+
+  // Handler: Desktop (Scrolls immediately)
+  const handleDesktopClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    smoothScrollTo(href);
   };
 
   return (
     <nav className="bg-[#fffdec] p-6 relative z-50">
       <div className="flex items-center justify-between">
-        <p className="text-[#8B542C] text-xl">moSam</p>
+        <Link
+          href="#"
+          onClick={(e) => handleDesktopClick(e, "#")}
+          className="text-[#8B542C] text-xl font-bold"
+        >
+          moSam
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex text-[#8B542C] gap-8 text-lg">
-          <Link href="#">Home</Link>
-          <Link href="#features">Features</Link>
-          <Link href="#faq">FAQs</Link>
-          <Link href="#contact-us">Contact Us</Link>
+          <Link
+            href="#"
+            onClick={(e) => handleDesktopClick(e, "#")}
+            className="hover:opacity-80 transition-opacity"
+          >
+            Home
+          </Link>
+          <Link
+            href="#features"
+            onClick={(e) => handleDesktopClick(e, "#features")}
+            className="hover:opacity-80 transition-opacity"
+          >
+            Features
+          </Link>
+          <Link
+            href="#faq"
+            onClick={(e) => handleDesktopClick(e, "#faq")}
+            className="hover:opacity-80 transition-opacity"
+          >
+            FAQs
+          </Link>
+          <Link
+            href="#contact-us"
+            onClick={(e) => handleDesktopClick(e, "#contact-us")}
+            className="hover:opacity-80 transition-opacity"
+          >
+            Contact Us
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -42,7 +90,7 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
         className={`
           fixed top-15 right-5
@@ -55,20 +103,26 @@ const Navbar: React.FC = () => {
         `}
       >
         <div className="flex flex-col text-[#8B542C] gap-5 text-lg">
-          <button onClick={() => handleLinkClick("#")} className="text-left">
+          <button
+            onClick={(e) => handleMobileClick(e, "#")}
+            className="text-left"
+          >
             Home
           </button>
           <button
-            onClick={() => handleLinkClick("#features")}
+            onClick={(e) => handleMobileClick(e, "#features")}
             className="text-left"
           >
             Features
           </button>
-          <button onClick={() => handleLinkClick("#faq")} className="text-left">
+          <button
+            onClick={(e) => handleMobileClick(e, "#faq")}
+            className="text-left"
+          >
             FAQs
           </button>
           <button
-            onClick={() => handleLinkClick("#contact-us")}
+            onClick={(e) => handleMobileClick(e, "#contact-us")}
             className="text-left"
           >
             Contact Us
