@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const ContactUsForm: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="contact-us" className="min-h-screen flex flex-col">
       <div className="flex-1 pt-20 pb-40">
         {/* <div className="lustria text-4xl font-bold text-black">
           Hello with Lustria font!
