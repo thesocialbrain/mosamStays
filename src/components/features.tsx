@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import {
   Accordion,
@@ -23,19 +23,8 @@ export default function MosamFeatures() {
     typedFeaturesData?.length ? `feat-0` : undefined
   );
 
-  const [fade, setFade] = useState<boolean>(true);
-
-  // derive numeric index from value (no separate activeIndex to keep in sync)
+  // derive numeric index from value
   const activeIndex = value ? Number(value.replace("feat-", "")) : 0;
-
-  useEffect(() => {
-    const out = window.setTimeout(() => setFade(false), 0);
-    const ino = window.setTimeout(() => setFade(true), 50);
-    return () => {
-      clearTimeout(out);
-      clearTimeout(ino);
-    };
-  }, [value]);
 
   return (
     <section id="features" className="p-8 md:p-16 ">
@@ -49,17 +38,20 @@ export default function MosamFeatures() {
 
       <div className="flex flex-col md:flex-row gap-20 max-w-6xl mx-auto">
         {/* Left Side: Accordion */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center">
+        <div className="w-full md:w-2/5 flex flex-col justify-center">
           <Accordion
             type="single"
             collapsible
             value={value}
-            onValueChange={(v) => setValue(v || undefined)}
+            onValueChange={(v) => {
+              setValue(v === "" ? "feat-0" : v);
+            }}
           >
             {typedFeaturesData.map((feature, index) => (
               <AccordionItem value={`feat-${index}`} key={feature.title}>
                 <AccordionTrigger
-                  className={`py-3 transition-opacity duration-500 ease-in cursor-pointer text-left ${
+                  // Vertically align chevron with text
+                  className={`py-3 transition-opacity duration-500 ease-in cursor-pointer text-left flex items-center justify-between w-full ${
                     value === `feat-${index}`
                       ? "text-[#000000]"
                       : "text-[#2b2a2a]"
@@ -77,16 +69,13 @@ export default function MosamFeatures() {
                     {/* Mobile-only image under the content */}
                     <div className="md:hidden w-full mt-6">
                       <div className="relative w-full aspect-video overflow-hidden rounded-3xl mb-4">
+                        {/* Mobile image bug fix: Removed conditional opacity */}
                         <Image
                           key={typedFeaturesData[index].imageUrl}
                           src={typedFeaturesData[index].imageUrl}
                           alt={typedFeaturesData[index].title}
                           fill
-                          className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
-                            value === `feat-${index}` && fade
-                              ? "opacity-100"
-                              : "opacity-0"
-                          }`}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
@@ -107,9 +96,7 @@ export default function MosamFeatures() {
                 alt={typedFeaturesData[activeIndex].title}
                 fill
                 style={{ objectFit: "cover" }}
-                className={`transition-opacity duration-900 ease-in-out ${
-                  fade ? "opacity-900" : "opacity-0"
-                }`}
+                className="transition-opacity duration-500 ease-in-out opacity-100"
               />
             )}
           </div>
