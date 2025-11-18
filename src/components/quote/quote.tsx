@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import quoteImage from '../../../public/quote/mosalQuote.png'
 
 const Quote = () => {
@@ -17,19 +16,7 @@ const Quote = () => {
 
                 {/* TEXT OVER IMAGE */}
                 <div 
-                    className="
-                        absolute 
-                        top-30
-                        lg:top-1/4
-                        right-2 sm:right-10 md:right-60
-                        z-10 
-                        text-left
-                        px-4 
-                        w-[90%] sm:w-[60%] md:w-[420px]
-                        flex flex-col 
-                        gap-4 sm:gap-6
-                    "
-                >
+                    className="absolute top-30 lg:top-1/4 right-2 sm:right-10 md:right-60 z-10 text-left px-4 w-[90%] sm:w-[60%] md:w-[420px] flex flex-col gap-4 sm:gap-6">
                     <p className="text-[#8B542C] text-base sm:text-lg md:text-xl leading-relaxed">
                         “Awakening to harmonious bird tunes, delighting in the magic of forest walks,
                         and admiring the breathtaking spectacle of the cliffs. A tranquil getaway and

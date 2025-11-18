@@ -1,25 +1,13 @@
-import React from "react";
 import Image from "next/image";
-import heroImage from "../../../public/hero/mosam_heroImage.png";
+import heroImage from "../../../public/hero/cropped-hero.png";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <div className="bg-[#fffdec] h-full">
       {/* HERO SECTION */}
       <div className="relative w-full aspect-3/4 md:h-screen overflow-hidden bg-[#fffdec]">
         {/* TITLE */}
-        <p
-          className="
-                        relative z-20 
-                        pl-4 md:pl-8 
-                        pt-30 lg:pt-20 md:pt-28 
-                        bg-linear-to-b 
-                        from-[#8B542C] via-[#8B542C]/80 to-transparent 
-                        bg-clip-text text-transparent 
-                        text-[40px] sm:text-[60px] md:text-[120px] 
-                        leading-tight
-                    "
-        >
+        <p className="relative z-20 pl-4 md:pl-8 pt-30 lg:pt-20 md:pt-28 bg-linear-to-b from-[#8B542C] via-[#8B542C]/80 to-transparent bg-clip-text text-transparent text-[40px] sm:text-[60px] md:text-[120px] leading-tight">
           Mosam Farmstay
         </p>
 
@@ -27,11 +15,18 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-40 z-10 bg-linear-to-t from-[#fffdec] to-transparent pointer-events-none"></div>
 
         {/* IMAGE */}
-        <Image
+        {/* <Image
           src={heroImage}
           alt="Hero Image"
           fill
           className="object-cover object-center"
+          priority
+        /> */}
+        <Image
+          src={heroImage}
+          alt="Hero Image"
+          fill
+          className=""
           priority
         />
       </div>
