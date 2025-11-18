@@ -18,7 +18,7 @@ const typedFaqData: FaqItemData[] = faqData as FaqItemData[];
 
 const FaqSection: React.FC = () => {
   return (
-    <div id="faq" className="py-12">
+    <section id="faq" className="py-12">
       <div className="text-center mb-12 mx-5">
         <h1 className="text-3xl md:text-[56px] text-center mb-20">
           Your Questions, Answered
@@ -55,7 +55,7 @@ const FaqSection: React.FC = () => {
           ))}
         </Accordion>
       </div>
-    </div>
+    </section>
   );
 };
 

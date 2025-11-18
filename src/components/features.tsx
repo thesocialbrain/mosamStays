@@ -23,7 +23,6 @@ export default function MosamFeatures() {
     typedFeaturesData?.length ? `feat-0` : undefined
   );
 
-  // derive numeric index from value
   const activeIndex = value ? Number(value.replace("feat-", "")) : 0;
 
   return (
@@ -38,7 +37,7 @@ export default function MosamFeatures() {
 
       <div className="flex flex-col md:flex-row gap-20 max-w-6xl mx-auto">
         {/* Left Side: Accordion */}
-        <div className="w-full md:w-2/5 flex flex-col justify-center">
+        <div className="w-full md:w-2/5 lg:w-1/2 flex flex-col justify-center">
           <Accordion
             type="single"
             collapsible
@@ -50,8 +49,7 @@ export default function MosamFeatures() {
             {typedFeaturesData.map((feature, index) => (
               <AccordionItem value={`feat-${index}`} key={feature.title}>
                 <AccordionTrigger
-                  // Vertically align chevron with text
-                  className={`py-3 transition-opacity duration-500 ease-in cursor-pointer text-left flex items-center justify-between w-full ${
+                  className={`py-3 transition-opacity duration-500 ease-in cursor-pointer text-left flex items-center justify-between no-chevron w-full ${
                     value === `feat-${index}`
                       ? "text-[#000000]"
                       : "text-[#2b2a2a]"
@@ -66,10 +64,9 @@ export default function MosamFeatures() {
                       {feature.description}
                     </p>
 
-                    {/* Mobile-only image under the content */}
+                    {/* Mobile-only image  */}
                     <div className="md:hidden w-full mt-6">
                       <div className="relative w-full aspect-video overflow-hidden rounded-3xl mb-4">
-                        {/* Mobile image bug fix: Removed conditional opacity */}
                         <Image
                           key={typedFeaturesData[index].imageUrl}
                           src={typedFeaturesData[index].imageUrl}
@@ -86,8 +83,8 @@ export default function MosamFeatures() {
           </Accordion>
         </div>
 
-        {/* Right Side: Desktop Image (visible from md+) */}
-        <div className="w-full md:w-2/3 lg:w-1/2 md:flex items-center justify-center hidden">
+        {/* Right Side: Desktop Image  */}
+        <div className="w-full md:w-2/3 md:flex items-center justify-center hidden">
           <div className="relative w-3/4 aspect-square overflow-hidden rounded-[50px]">
             {typedFeaturesData[activeIndex] && (
               <Image
