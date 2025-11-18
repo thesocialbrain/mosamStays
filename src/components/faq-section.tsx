@@ -40,7 +40,7 @@ const FaqSection: React.FC = () => {
             >
               <AccordionTrigger className="px-4 py-2 pl-5 pt-2 no-underline hover:no-underline">
                 <div className="flex items-start justify-between w-full">
-                  <h3 className="text-lg font-sans text-[16px] font-semibold leading-relaxed text-stone-700">
+                  <h3 className="text-lg font-sans text-[16px] font-semibold leading-relaxed text-stone-700 cursor-pointer">
                     {item.question}
                   </h3>
                 </div>
