@@ -18,14 +18,14 @@ const typedFaqData: FaqItemData[] = faqData as FaqItemData[];
 
 const FaqSection: React.FC = () => {
   return (
-    <section id="faq" className="py-12">
-      <div className="text-center mb-12 mx-5">
+    <section id="faq" className="pt-24  md:h-screen">
+      <div className="text-center mb-10 mx-5">
         <h1 className="text-3xl md:text-[56px] text-center mb-20">
           Your Questions, Answered
         </h1>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-3xl mx-auto px-2">
         <Accordion
           type="single"
           collapsible
@@ -47,7 +47,7 @@ const FaqSection: React.FC = () => {
               </AccordionTrigger>
 
               <AccordionContent className="transition-all duration-300 p-5 pb-3 pt-1">
-                <p className="text-[15px] font-sans text-[#656565]">
+                <p className="text-[15px] font-sans text-[#656565] pr-6">
                   {item.answer}
                 </p>
               </AccordionContent>

@@ -37,18 +37,19 @@ const Hero: React.FC = () => {
       </div>
 
       {/* CONTENT BELOW HERO */}
-      <div className="flex flex-col gap-6 items-center justify-center text-center mt-12 px-4">
-        <p className="text-[#8B542C] text-2xl sm:text-3xl md:text-4xl max-w-[90%] md:max-w-[450px]">
-          Nothing short of serenity and opulence.
+      <div className="flex flex-col gap-6 items-center justify-center text-center mt-12 px-4 mb-16">
+        <h1 className="text-2xl md:text-[56px] text-center mb-4 md:mb-4 max-w-[90%] md:max-w-[650px]">
+          Nothing short of <br /> serenity and opulence.
+        </h1>
+
+        <p className="text-sm sm:text-base max-w-[90%] md:max-w-[600px] font-sans text-[#070707]">
+          A British style dreamy wooden cottage villa in Nashik-Igatpuri, built
+          with love and surrounded by nature. Enjoy serene landscapes and cozy
+          comfort, making it an ideal and affordable retreat for couples,
+          families and nature lovers.
         </p>
 
-        <p className="text-sm sm:text-base max-w-[90%] md:max-w-[450px] text-[#8B542C]">
-          Experience the grandeur of Harbour, a quintessential five-star resort
-          nestled within 100 lush green acres, housing a world-class spa,
-          award-winning Michelin eatery, and a premier golf course.
-        </p>
-
-        <button className="text-white bg-gray-900 px-6 py-2 rounded-full shadow-md text-sm sm:text-base">
+        <button className="text-white bg-gray-900 px-6 py-2 rounded-full shadow-md text-sm sm:text-base mt-6">
           Book a night
         </button>
       </div>
