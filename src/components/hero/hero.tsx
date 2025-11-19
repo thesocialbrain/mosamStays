@@ -2,6 +2,7 @@ import Image from "next/image";
 import heroImage from "../../../public/hero/hero.png";
 import { cn } from "@/lib/utils";
 import { inter, lustria } from "@/fonts/lustria";
+import { motion } from "motion/react";
 
 const Hero = () => {
   return (
@@ -25,9 +26,14 @@ const Hero = () => {
           className="w-full"
           priority
         />
-        <span className="hero-text">
+        <motion.span
+          className="hero-text"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+        >
           MoSam <span className="hero-text-front">Farmstay</span>
-        </span>
+        </motion.span>
       </div>
       <div className="flex flex-col gap-6 items-center justify-center text-center mt-20 lg:mt-18 px-4 mb-16 ">
         <h1 className="text-2xl md:text-[56px] text-center mb-4 md:mb-4 max-w-[90%] md:max-w-[650px]">
