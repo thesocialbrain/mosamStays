@@ -10,7 +10,7 @@ import Link from "next/link";
 const ContactUsForm: React.FC = () => {
   return (
     <section id="contact-us" className="min-h-screen flex flex-col">
-      <div className="flex-1 pt-20 pb-40">
+      <div className="flex-1 pb-40">
         {/* <div className="lustria text-4xl font-bold text-black">
           Hello with Lustria font!
         </div> */}
@@ -68,7 +68,7 @@ const ContactUsForm: React.FC = () => {
                   href="https://www.instagram.com/mosamfarmstay"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 mt-40"
+                  className="flex items-center gap-2 mt-[-40] md:mt-40"
                 >
                   <Instagram className="w-6 h-6 text-gray-200 group-hover:text-white transition-colors" />
                   <span className="text-[16px] font-sans">

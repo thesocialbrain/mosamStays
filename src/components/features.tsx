@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+
 import {
   Accordion,
   AccordionItem,
@@ -9,6 +9,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import featuresData from "../lib/data/features.json";
+import FadingImage from "@/components/custom/FadingImage";
 
 interface Feature {
   title: string;
@@ -36,7 +37,7 @@ export default function MosamFeatures() {
       </h1>
 
       <div className="flex flex-col md:flex-row gap-20 max-w-6xl mx-auto">
-        {/* Left Side: Accordion */}
+        {/* Left Side */}
         <div className="w-full md:w-2/5 lg:w-1/2 flex flex-col justify-center">
           <Accordion
             type="single"
@@ -64,16 +65,11 @@ export default function MosamFeatures() {
                       {feature.description}
                     </p>
 
-                    {/* Mobile-only image  */}
+                    {/* Mobile only images */}
+
                     <div className="md:hidden w-full mt-6">
                       <div className="relative w-full aspect-video overflow-hidden rounded-3xl mb-4">
-                        <Image
-                          key={typedFeaturesData[index].imageUrl}
-                          src={typedFeaturesData[index].imageUrl}
-                          alt={typedFeaturesData[index].title}
-                          fill
-                          className="w-full h-full object-cover"
-                        />
+                        <FadingImage feature={typedFeaturesData[index]} />
                       </div>
                     </div>
                   </div>
@@ -83,17 +79,13 @@ export default function MosamFeatures() {
           </Accordion>
         </div>
 
-        {/* Right Side: Desktop Image  */}
+        {/* Right Image */}
         <div className="w-full md:w-2/3 md:flex items-center justify-center hidden">
-          <div className="relative w-3/4 aspect-square overflow-hidden rounded-[50px]">
+          <div className="relative w-3/4 aspect-square overflow-hidden rounded-[50px] bg-gray-100">
             {typedFeaturesData[activeIndex] && (
-              <Image
+              <FadingImage
                 key={typedFeaturesData[activeIndex].imageUrl}
-                src={typedFeaturesData[activeIndex].imageUrl}
-                alt={typedFeaturesData[activeIndex].title}
-                fill
-                style={{ objectFit: "cover" }}
-                className="transition-opacity duration-500 ease-in-out opacity-100"
+                feature={typedFeaturesData[activeIndex]}
               />
             )}
           </div>
