@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "../../../public/hero/hero.svg";
+import heroImage from "../../../public/hero/hero.png";
 import { cn } from "@/lib/utils";
 import { inter, lustria } from "@/fonts/lustria";
 
@@ -18,12 +18,17 @@ const Hero = () => {
       )}>
         Book a Night
       </button>
-      <Image
-        src={heroImage}
-        alt="Hero Image"
-        className="relative mt-10 md:-mt-10 w-full mask-hero"
-        priority
-      />
+      <div className="mt-10 relative md:-mt-10 w-full mask-hero">
+        <Image
+          src={heroImage}
+          alt="Hero Image"
+          className="w-full"
+          priority
+        />
+        <span className="hero-text">
+          MoSam <span className="hero-text-front">Farmstay</span>
+        </span>
+      </div>
       <div className="flex flex-col gap-6 items-center justify-center text-center mt-20 lg:mt-18 px-4 mb-16 ">
         <h1 className="text-2xl md:text-[56px] text-center mb-4 md:mb-4 max-w-[90%] md:max-w-[650px]">
           Nothing short of <br /> serenity and opulence.
