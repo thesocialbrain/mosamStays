@@ -31,7 +31,7 @@ const Hero = () => {
       {/* HERO SECTION */}
       <div className="relative w-full aspect-3/4 md:h-screen overflow-hidden bg-[#fffdec]">
         {/* TITLE */}
-        <p className="relative z-20 pl-4 md:pl-8 pt-30 lg:pt-20 md:pt-28 bg-linear-to-b from-[#8B542C] via-[#8B542C]/80 to-transparent bg-clip-text text-transparent text-[40px] sm:text-[60px] md:text-[120px] leading-tight">
+        <p className="relative z-20 pl-2 md:pl-8 lg:pl-12 pt-24 lg:pt-16 md:pt-28 bg-linear-to-b from-[#8B542C] via-[#8B542C]/80 to-transparent bg-clip-text text-transparent text-[50px] md:text-[120px] lg:text-[156px] leading-tight">
           Mosam Farmstay
         </p>
 
@@ -39,13 +39,6 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 w-full h-40 z-10 bg-linear-to-t from-[#fffdec] to-transparent pointer-events-none"></div>
 
         {/* IMAGE */}
-        {/* <Image
-          src={heroImage}
-          alt="Hero Image"
-          fill
-          className="object-cover object-center"
-          priority
-        /> */}
         <Image
           src={heroImage}
           alt="Hero Image"
@@ -56,7 +49,7 @@ const Hero = () => {
       </div>
 
       {/* CONTENT BELOW HERO */}
-      <div className="flex flex-col gap-6 items-center justify-center text-center mt-12 px-4 mb-16">
+      <div className="flex flex-col gap-6 items-center justify-center text-center mt-20 lg:mt-18 px-4 mb-16 ">
         <h1 className="text-2xl md:text-[56px] text-center mb-4 md:mb-4 max-w-[90%] md:max-w-[650px]">
           Nothing short of <br /> serenity and opulence.
         </h1>

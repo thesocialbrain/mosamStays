@@ -23,7 +23,7 @@ const Quote = () => {
                         the variety of pursuits is vast.”
                     </p>
 
-                    <p className="text-[#8B542C] text-sm sm:text-base text-left">
+                    <p className="text-[#8B542C] text-sm sm:text-base text-right lg:text-left">
                         — Sarah Colloins
                     </p>
                 </div>
