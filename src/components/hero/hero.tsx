@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className="relative mb-24">
       <h1 className={cn(
-        "text-[24px] md:text-[56px] text-center md:mt-[87px] mt-[75px] serif-font",
+        "text-[8vw] md:text-[64px] text-center md:mt-[87px] mt-[75px] serif-font",
         lustria.className
       )}>
         Your tranquil getaway, <br />starts here.
@@ -24,6 +24,25 @@ const Hero = () => {
         className="relative mt-10 md:-mt-10 w-full mask-hero"
         priority
       />
+      <div className="flex flex-col gap-6 items-center justify-center text-center mt-20 lg:mt-18 px-4 mb-16 ">
+        <h1 className="text-2xl md:text-[56px] text-center mb-4 md:mb-4 max-w-[90%] md:max-w-[650px]">
+          Nothing short of <br /> serenity and opulence.
+        </h1>
+
+        <p className="text-sm sm:text-base max-w-[90%] md:max-w-[600px] font-sans text-[#070707]">
+          A British style dreamy wooden cottage villa in Nashik-Igatpuri, built
+          with love and surrounded by nature. Enjoy serene landscapes and cozy
+          comfort, making it an ideal and affordable retreat for couples,
+          families and nature lovers.
+        </p>
+
+        <button className={cn(
+          "relative z-10 button block mx-auto mt-8 font-semibold",
+          inter.className
+        )}>
+          Book a Night
+        </button>
+      </div>
     </div>
   )
   return (
