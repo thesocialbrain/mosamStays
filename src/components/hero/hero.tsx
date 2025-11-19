@@ -1,7 +1,31 @@
 import Image from "next/image";
-import heroImage from "../../../public/hero/cropped-hero.png";
+import heroImage from "../../../public/hero/hero.svg";
+import { cn } from "@/lib/utils";
+import { inter, lustria } from "@/fonts/lustria";
 
 const Hero = () => {
+  return (
+    <div className="relative mb-24">
+      <h1 className={cn(
+        "text-[24px] md:text-[56px] text-center md:mt-[87px] mt-[75px] serif-font",
+        lustria.className
+      )}>
+        Your tranquil getaway, <br />starts here.
+      </h1>
+      <button className={cn(
+        "relative z-10 button block mx-auto mt-8 font-semibold",
+        inter.className
+      )}>
+        Book a Night
+      </button>
+      <Image
+        src={heroImage}
+        alt="Hero Image"
+        className="relative mt-10 md:-mt-10 w-full mask-hero"
+        priority
+      />
+    </div>
+  )
   return (
     <div className="bg-[#fffdec] h-full">
       {/* HERO SECTION */}

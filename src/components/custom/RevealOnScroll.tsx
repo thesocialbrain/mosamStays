@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 type RevealProps = {
@@ -27,7 +27,7 @@ export default function RevealOnScroll({
       className={className}
       initial={{ opacity: 0, y: 70 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, amount: 0.18 }}
+      viewport={{ once }}
       transition={{ duration: 0.9, ease: "easeInOut", delay }}
     >
       {children}
