@@ -1,32 +1,33 @@
 [
   {
     "id": 1,
-    "title": "Breathtaking Views",
-    "description": "Experience the beauty of Harbour from every angle, with awe-inspiring vistas of lush landscapes, serene waters, and endless horizons.",
-    "imageUrl": "/images/1.jpg"
+    "title": "Essence of Nature, Redefined",
+    "description": "Here, nature is not just seen.. it is embodied in every detail. Soft greenery frames your mornings, tranquil views accompany your evenings and every space is designed with quiet luxury in mind. A stay that feels both grounding and indulgent.",
+    "imageUrl": "/images/1.png"
   },
   {
     "id": 2,
-    "title": "Infinity Pool",
-    "description": "Lose yourself in the horizon as our stunning infinity pool merges seamlessly with the azure sea. The perfect spot for ultimate relaxation.",
-    "imageUrl": "/images/2.jpg"
+    "title": "A Serene Escape Into Nature",
+    "description": "Discover a calming nature retreat designed to rejuvenate your mind and body. With lush surroundings, open spaces, and a quiet ambiance, this retreat offers the ideal environment to unwind, meditate, or simply enjoy the beauty around you.",
+    "imageUrl": "/images/21.png"
   },
   {
     "id": 3,
-    "title": "Championship golf course",
-    "description": "Tee off on our 18-hole championship course, designed by legends and set against a backdrop of dramatic coastal cliffs.",
-    "imageUrl": "/images/3.jpg"
+    "title": "Elegant Outdoor Patio",
+    "description": "Step into an elegant patio designed for comfort and charm. Thoughtfully arranged seating, warm ambient lighting, and a peaceful outdoor vibe make this the perfect spot to unwind, share conversations or enjoy a quiet moment surrounded by nature.",
+    "imageUrl": "/images/3.png"
   },
   {
     "id": 4,
-    "title": "Sensua Spa",
-    "description": "Indulge your senses at Sensua Spa, a sanctuary of tranquility offering bespoke treatments inspired by ancient wellness traditions.",
-    "imageUrl": "/images/1.jpg"
+    "title": "Rustic Luxury Wooden Rooms",
+    "description": "Step into a beautifully designed wooden rooms that radiates warmth and tranquility. With soft lighting, natural wood accents, and a cozy layout, this space offers the perfect environment to relax, unwind, and enjoy peaceful sleep.",
+    "imageUrl": "/images/4.png"
   },
+
   {
     "id": 5,
-    "title": "Michelin restaurant",
-    "description": "Embark on a culinary journey at our Michelin-starred restaurant, where innovative dishes meet the finest local ingredients.",
-    "imageUrl": "/images/2.jpg"
+    "title": "Tranquil Open Garden Area",
+    "description": "Enjoy a refreshing open garden space surrounded by greenery and open skies. Perfect for relaxation, outdoor seating, or simply soaking in nature's peaceful vibes.",
+    "imageUrl": "/images/5.png"
   }
 ]

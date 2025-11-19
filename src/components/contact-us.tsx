@@ -68,7 +68,7 @@ const ContactUsForm: React.FC = () => {
                   href="https://www.instagram.com/mosamfarmstay"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 mt-40"
+                  className="flex items-center gap-2 mt-[-40] md:mt-40"
                 >
                   <Instagram className="w-6 h-6 text-gray-200 group-hover:text-white transition-colors" />
                   <span className="text-[16px] font-sans">
